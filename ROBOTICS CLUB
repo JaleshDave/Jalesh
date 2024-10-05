@@ -712,3 +712,241 @@ int main() {
     return 0;
 }
 [ Integer,float,char]
+
+ #include <stdio.h>
+#include <math.h>
+int main() {
+    int num, originalNum, remainder, n = 0;
+    double result = 0.0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    originalNum = num;
+
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++n;
+    }
+
+    originalNum = num;
+
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, n);
+        originalNum /= 10;
+    }
+
+    if ((int)result == num) {
+        printf("%d is an Armstrong number.\n", num);
+    } else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    return 0;
+}
+[ Armstrong]
+
+
+ #include <stdio.h>
+#include <math.h>
+
+struct book
+{
+  int b_code;
+  char b_title[20];
+  char b_writer_name[20];
+  int b_price;
+  int b_edition;
+  int b_copies;
+};
+int main()
+{
+  struct book b1;
+  b1.b_code = 1;
+  strcpy(b1.b_title, "abcd");
+  strcpy(b1.b_writer_name,"wxyz");
+  b1.b_price=200;
+  b1.b_edition=2024;
+  b1.b_copies=123;
+
+  printf("book code  : %d",b1.b_code);
+  printf("\nbook title  : %s",b1.b_title);
+  printf("\nbook writer name  : %s",b1.b_writer_name);
+  printf("\nbook price  : %d",b1.b_price);
+  printf("\nbook editoin  : %d",b1.b_edition);
+  printf("\nbook copies  : %d",b1.b_copies);
+}
+[Book management]
+
+
+#include <stdio.h>
+struct emp{
+    int id;
+    char name[20];
+    int emp_pno;
+};
+int main() {
+    int n,i;
+    printf("enter number of employees : ");
+    scanf("%d",&n);
+    struct emp l[n];
+    for(i=0;i<n;i++){
+      printf("epmloyee id : ");
+        scanf("%d",&l[i].id);
+        printf("epmloyee name : ");
+        scanf("%s",&l[i].name);
+        printf("epmloyee phone number : ");
+        scanf("%d",&l[i].emp_pno);
+    }
+
+    for(i=0;i<n;i++){
+        printf("Emp ID: %d, ",l[i].id);
+        printf("Emp Name: %s\n",l[i].name);
+        printf("Emp Phone Number: %d\n",l[i].emp_pno);
+    }
+    return 0;
+}
+[10/5, 18:04] jaleshdave: Employee Details
+[10/5, 18:05] jaleshdave: #include <stdio.h>
+
+int main()
+{
+  int a[5]={1,2,3,4,5},i;
+  printf("enter index : ");
+  scanf("%d",&i);
+  printf("%d",a[i]);
+}
+[Enter and print array]
+
+
+#include <stdio.h>
+int main() {
+    int num, i;
+    int factorial = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        for (i = 1; i <= num; ++i) {
+            factorial *= i;
+        }
+        printf("Factorial of %d is %d\n", num, factorial);
+    }
+
+    return 0;
+}
+[ Factorial]
+
+
+#include <stdio.h>
+
+int main() {
+    int num, factorial = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    int i = 1;
+
+    while (i <= num) {
+        factorial *= i;
+        i++;
+    }
+
+    printf("Factorial of %d is: %d\n", num, factorial);
+
+    return 0;
+}
+[Factorial Loop]
+
+
+ #include <stdio.h>
+
+void power(int base, int exponent, long long *result) {
+    *result = 1; 
+    for (int i = 0; i < exponent; i++) {
+        *result *= base;
+    }
+}
+
+int main() {
+    int base, exponent;
+    long long result;
+
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exponent);
+
+    power(base, exponent, &result);
+
+    printf("%d raised to the power of %d is: %lld\n", base, exponent, result);
+
+    return 0;
+}
+[Finding argument return type]
+
+
+#include <stdio.h>
+int main() {
+    int a, b, c, max;
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &a, &b, &c);
+    max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+    printf("The maximum of the three numbers is: %d\n", max);
+}
+
+[Maximum of 3]
+
+
+ #include <stdio.h>
+int main()
+{
+  int a[5]={1,2,3,4,5},i;
+  for(i=0;i<5;i++)
+  {
+    printf("enter elements %d : ",i);
+    scanf("%d",&a[i]);
+  }
+  printf("before reversing\n");
+  for(i=0;i<5;i++)
+  {
+    printf("%d\t",a[i]);
+  }
+  printf("\nafter reversing\n");
+  for(i=4;i>=0;--i)
+  {
+    printf("%d\t",a[i]);
+  }
+}
+[Reversing ARRAY elements]
+
+
+#include <stdio.h>
+int factorial(int num) {
+    int fact = 1;
+    for (int i = 1; i <= num; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+int main() {
+    int x, n;
+    int result = 1; 
+
+    printf("Enter the value of x: ");
+    scanf("%d", &x);
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    for (int i = x; i <= n; i++) {
+        result += factorial(i);
+    }
+
+    printf("The result of the series is: %d\n", result);
+}
+[Submission of n factorial terms]
